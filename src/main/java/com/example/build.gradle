@@ -1,1 +1,20 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
 
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.runelite.net' }
+}
+
+dependencies {
+    compileOnly 'net.runelite:runelite-api:1.10.30'
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+    implementation 'net.runelite:client:1.10.30'
+}
+
+shadowJar {
+    archiveClassifier.set('')
+}
